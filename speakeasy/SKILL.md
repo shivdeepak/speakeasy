@@ -6,7 +6,7 @@ description: >-
   Silent when clean.
 license: MIT
 metadata:
-  version: "1.0.0" # x-release-please-version
+  version: "1.0.1" # x-release-please-version
 ---
 
 # Speakeasy
