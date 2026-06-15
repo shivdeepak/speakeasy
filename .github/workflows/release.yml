@@ -21,13 +21,11 @@ jobs:
       # The steps below run only when a release PR is merged and a release is cut.
       - uses: actions/checkout@v4
         if: ${{ steps.release.outputs.release_created }}
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         if: ${{ steps.release.outputs.release_created }}
         with:
-          python-version: "3.12"
-      - run: python3 scripts/validate.py speakeasy
-        if: ${{ steps.release.outputs.release_created }}
-      - run: ./scripts/package.sh
+          node-version: "20"
+      - run: npx -y skillship package speakeasy
         if: ${{ steps.release.outputs.release_created }}
       - run: gh release upload "${{ steps.release.outputs.tag_name }}" dist/speakeasy.skill --clobber
         if: ${{ steps.release.outputs.release_created }}

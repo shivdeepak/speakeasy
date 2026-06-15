@@ -38,3 +38,11 @@ fix: stop double coaching when the same error repeats
 docs: clarify Claude Web upload steps
 feat!: change feedback format to a single inline note
 ```
+
+## Portability tooling
+
+Validation, packaging, and install are delegated to
+[`skillship`](https://github.com/shivdeepak/skillship), a standalone
+skill-agnostic CLI, invoked via `npx skillship <command>`. This repo holds no
+local packaging scripts; CI calls `skillship` directly. Change behavior there,
+not here.

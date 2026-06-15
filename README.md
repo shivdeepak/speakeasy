@@ -71,21 +71,22 @@ together:
 
 ## Development / maintainers
 
-The scripts under `scripts/` are dev and CI helpers — end users do not need
-them.
+Validation, packaging, and install are handled by
+[`skillship`](https://github.com/shivdeepak/skillship), a skill-agnostic CLI.
+End users do not need it; it is only for local dev and CI.
 
 ```bash
 # Validate structure and description length (≤200 chars for upload surfaces)
-python3 scripts/validate.py speakeasy
+npx skillship validate speakeasy
 
 # Build dist/speakeasy.skill locally (CI does this on merge to main)
-./scripts/package.sh
+npx skillship package speakeasy
 
 # Install into local Cursor / Claude Code dirs while developing
-./scripts/install.sh --all-personal
+npx skillship install speakeasy -a cursor,claude-code
 ```
 
-Make scripts executable once: `chmod +x scripts/*.sh`
+Requires Node.js ≥ 18.
 
 ### Versioning and releases
 
@@ -122,7 +123,7 @@ pull requests".
 |---------|-----|
 | Skill not firing | Strengthen the `description` in frontmatter; try an optional companion snippet (skill **or** snippet, not both) |
 | Double coaching notes | Remove duplicate Cursor user rules; use either the skill or `snippets/cursor-rule.mdc` |
-| Upload rejected | The released `speakeasy.skill` already passed `validate.py` in CI; re-download the latest release. If building locally, run `python3 scripts/validate.py speakeasy` and confirm the zip contains `speakeasy/SKILL.md` at its root |
+| Upload rejected | The released `speakeasy.skill` already passed validation in CI; re-download the latest release. If building locally, run `npx skillship validate speakeasy` and confirm the zip contains `speakeasy/SKILL.md` at its root |
 | Install path wrong | Cursor: `~/.cursor/skills/` or `.cursor/skills/`; Claude Code: `~/.claude/skills/` or `.claude/skills/` |
 
 ## How it works
