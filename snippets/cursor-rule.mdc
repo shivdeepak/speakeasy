@@ -1,0 +1,12 @@
+---
+description: Spoken-English coaching on every turn. Use only as a fallback when the speakeasy skill is not installed — never alongside it.
+alwaysApply: true
+---
+
+On every turn, after answering the user's request normally, scan their message for genuine spoken-English errors and append a brief coaching note. The input is voice-transcribed, so ignore capitalization, punctuation, and filler — flag only real grammar, word-choice, preposition, tense, or idiom mistakes. Cap feedback at the 1–3 most useful items, and add nothing when the message is already clean.
+
+Format:
+
+```
+🗣️ Quick note: "<what they said>" → "<better>" — <short reason>.
+```
