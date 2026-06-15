@@ -45,7 +45,8 @@ https://github.com/shivdeepak/speakeasy/releases/latest/download/speakeasy.skill
   (requires code execution on your plan)
 - **Claude Cowork:** Customize → Skills → Upload (desktop app only)
 
-The released file is built and validated by CI on every merge to `main`.
+The released file is built and validated by CI each time a new version is
+released (see [Versioning and releases](#versioning-and-releases)).
 
 ### Install via command (no download)
 
@@ -85,6 +86,35 @@ python3 scripts/validate.py speakeasy
 ```
 
 Make scripts executable once: `chmod +x scripts/*.sh`
+
+### Versioning and releases
+
+Releases are automated with
+[release-please](https://github.com/googleapis/release-please-action)
+using [Conventional Commits](https://www.conventionalcommits.org/). Do not bump
+versions by hand.
+
+- Write commits to `main` as `feat: ...`, `fix: ...`, `docs: ...`, etc.
+  (`feat!:` or a `BREAKING CHANGE:` footer triggers a major bump). See
+  [`AGENTS.md`](AGENTS.md) for the full commit rules.
+- release-please opens and maintains a "release" PR that bumps the version in
+  [`speakeasy/SKILL.md`](speakeasy/SKILL.md) (via the `#
+  x-release-please-version`
+  marker), [`version.txt`](version.txt), and `CHANGELOG.md`.
+- Merging that PR tags `vX.Y.Z`, creates the GitHub Release, and attaches a
+  freshly
+  built `speakeasy.skill`. Commits that don't change the skill produce no
+  release.
+
+Version source of truth is
+[`.release-please-manifest.json`](.release-please-manifest.json);
+`SKILL.md` and `version.txt` are kept in sync automatically.
+
+Repo settings required once: Settings → Actions → General → Workflow permissions
+→
+enable "Read and write permissions" and "Allow GitHub Actions to create and
+approve
+pull requests".
 
 ## Troubleshooting
 
