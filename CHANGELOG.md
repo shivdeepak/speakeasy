@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/shivdeepak/speakeasy/compare/speakeasy-v1.0.1...speakeasy-v1.0.2) (2026-06-15)
+
+
+### Documentation
+
+* reorient README toward end users ([fb42288](https://github.com/shivdeepak/speakeasy/commit/fb42288fdf0bd73db625d1fce989cf0049856741))
+
 ## [1.0.1](https://github.com/shivdeepak/speakeasy/compare/speakeasy-v1.0.0...speakeasy-v1.0.1) (2026-06-15)
 
 
