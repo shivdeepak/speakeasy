@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/shivdeepak/speakeasy/compare/speakeasy-v1.0.2...speakeasy-v1.1.0) (2026-06-16)
+
+
+### Features
+
+* add speakeasy skill for coaching spoken English ([8260ebc](https://github.com/shivdeepak/speakeasy/commit/8260ebc3413da61a265ea33cb3af33e6bb8240fe))
+
 ## [1.0.2](https://github.com/shivdeepak/speakeasy/compare/speakeasy-v1.0.1...speakeasy-v1.0.2) (2026-06-15)
 
 
