@@ -1,0 +1,7 @@
+{
+  "name": "speakeasy",
+  "description": "Coaches spoken English after each reply on voice input. Flags grammar, word choice, and idiom errors; stays silent when clean.",
+  "author": {
+    "name": "Shiv Deepak"
+  }
+}
