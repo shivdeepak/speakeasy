@@ -43,6 +43,6 @@ feat!: change feedback format to a single inline note
 
 Validation, packaging, and install are delegated to
 [`skillship`](https://github.com/shivdeepak/skillship), a standalone
-skill-agnostic CLI, invoked via `npx skillship <command>`. This repo holds no
+skill-agnostic CLI, invoked via `npx skillship@latest <command>`. This repo holds no
 local packaging scripts; CI calls `skillship` directly. Change behavior there,
 not here.

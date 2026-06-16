@@ -25,7 +25,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         with:
           node-version: "20"
-      - run: npx -y skillship package speakeasy
+      - run: npx -y skillship@latest package speakeasy
         if: ${{ steps.release.outputs.release_created }}
       - run: gh release upload "${{ steps.release.outputs.tag_name }}" dist/speakeasy.skill --clobber
         if: ${{ steps.release.outputs.release_created }}
